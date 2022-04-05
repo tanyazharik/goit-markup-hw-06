@@ -691,6 +691,7 @@ ul {
 }
 
 .footer {
+  position: relative;
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -885,27 +886,79 @@ ul {
 .auto-link:focus .icon-link {
   fill: var(--accent-color);
 }
-.subscribe-button {
+
+
+.form-field {
   display: inline-block;
-  align-items: center;
-  background-color: var(--accent-color);
-  color: var(--title);
+  flex-direction: row;
+  
 }
 
-.subscribe-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  width: 30px;
-  height: 30px;
+.alarm {
+
+    color: var(--title);
+    font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.subscribe-button {
+
+  display: inline-block;
   align-items: center;
   justify-content: center;
+  
+  width: 200px;
+  height: 50px;
+  margin: 0;
+  margin-left: 12px;
+  padding-bottom: 10px;
+  background-color: var(--accent-color);
+  color: var(--title);
+  border-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.subscribe-icon {
+   
+  margin-left: 10px;
   fill: var(--title);
   background-image: url(../images/iconsend.svg);
   background-repeat: no-repeat;
-  
   background-size: contain;
- 
   cursor: pointer;
+}
+
+.subscribe-icon::after {
+  content: "";
+  background-position: top;
+}
+.form-field input {
+  width: 358px;
+  height: 50px;
+  
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  border-color: #e5e5e5;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.subscribe-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform: translateY(-90%);
+  padding-top: 72px;
+  cursor: pointer;
+}
+.form-field input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
